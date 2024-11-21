@@ -1,0 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,300italic);
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+.frame {
+  position: absolute;
+  width: 450px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -200px;
+  background-color: #4cb6de;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 8px;
+  animation: invisible 1s linear;
+  animation-delay: .3s;
+  animation-fill-mode: both;
+}
+.quote {
+  font-size: 1.6rem;
+
+  color: #fff;
+}
+.quotation-mark {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  opacity: 0.2;
+  font-size: 5rem;
+}
+.quote-word {
+  background-color: #286f8a;
+  padding: 3px;
+  position: relative;
+  width: 125px;
+}
+.quote-word-cursor {
+  cursor: pointer;
+}
+
+.arrow {
+  content: "";
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: #286f8a transparent transparent;
+}
+
+.quote-word-dictionary {
+  width: 300px;
+  height: 80px;
+  font-size: 14px;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: 50%;
+  bottom: 390%;
+  transform: translateX(-50%);
+  display: block;
+}
+
+.quote-word:hover {
+  .quote-word-dictionary {
+    transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    visibility: visible;
+    bottom: 225%;
+    opacity: 1;
+    transition: 1s;
+  }
+}
+.quote-word:not(:hover) {
+  .quote-word-dictionary {
+    transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    visibility: visible;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+.word-pronunciation {
+  background-color: #fff;
+  color: #286f8a;
+  padding: 10px;
+}
+.word-meaning {
+  background-color: #286f8a;
+  padding: 10px;
+}
+
+.author {
+  color: #fff;
+  font-size: 20px;
+  font-style: italic;
+  align-self: flex-start;
+  margin-top: 15px;
+}
+
+@keyframes invisible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
